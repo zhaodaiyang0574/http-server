@@ -45,7 +45,7 @@ func analyseHeader(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Success! code: %d", http.StatusAccepted)
 	log.Printf("Client IP: %s", clientIP)
 
-	w.Write([]byte("Hello, this is server"))
+	
 	//01接收客户端 request，并将 request 中带的 header 写入 response header
 	for k, v := range r.Header {
 		for _, vv := range v {
@@ -57,6 +57,10 @@ func analyseHeader(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.RemoteAddr)
 	fmt.Printf("Ip is: %s\n", ReadUserIP(r))
 	log.Printf("Success! Response code: %d", 200)
+	
+	
+	//返回状态
+	w.Write([]byte("Hello, this is server"))
 }
 
 func main() {
