@@ -39,7 +39,7 @@ func analyseHeader(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("VERSION", version)
 	fmt.Printf("os version: %s \n", version)
 	
-	//把ip地址写入response header
+	//获取客户端ip地址，把ip地址写入response header
 	clientIP := ReadUserIP(r)
 	w.Header().Set("IP", clientIP)
 	log.Printf("Success! code: %d", http.StatusAccepted)
