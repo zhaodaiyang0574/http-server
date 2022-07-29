@@ -29,7 +29,8 @@ func ReadUserIP(r *http.Request) string {
 
 func healthz(w http.ResponseWriter, r *http.Request) {
 	//当访问 {url}/healthz 时，应返回200
-	w.Write([]byte("working"))
+	w.WriteHeader(http.StatusOK)
+	
 }
 
 func analyseHeader(w http.ResponseWriter, r *http.Request) {
