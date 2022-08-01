@@ -9,7 +9,7 @@ RUN GOOS=linux go build -installsuffix cgo -o httpserver main.go
 
 FROM busybox
 COPY --from=build /httpserver/httpserver /httpserver/httpserver
-EXPOSE 8888
+EXPOSE 8080
 ENV ENV local
 WORKDIR /httpserver/
 ENTRYPOINT ["./httpserver"]
